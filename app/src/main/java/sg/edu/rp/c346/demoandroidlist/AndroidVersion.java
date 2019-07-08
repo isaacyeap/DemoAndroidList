@@ -1,5 +1,9 @@
 package sg.edu.rp.c346.demoandroidlist;
 
+import android.content.Context;
+
+import java.util.ArrayList;
+
 public class AndroidVersion {
     private String name;
     private String version;
@@ -27,9 +31,6 @@ public class AndroidVersion {
 
     @Override
     public String toString() {
-        return "AndroidVersion{" +
-                "name='" + name + '\'' +
-                ", version='" + version + '\'' +
-                '}';
+        return name + ": " + version;
     }
 }
