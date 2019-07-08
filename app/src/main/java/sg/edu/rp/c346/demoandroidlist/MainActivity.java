@@ -11,23 +11,31 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ListView AndroidList;
-    ArrayList<String> AndroidSimpleList;
-    ArrayAdapter<String> aaAndroid;
+    ArrayList<AndroidVersion> AndroidSimpleList;
+    ArrayAdapter<AndroidVersion> aaAndroid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         AndroidList = findViewById(R.id.listSimpleAndroid);
-
         AndroidSimpleList = new ArrayList<>();
-        AndroidSimpleList.add("Pie - 9.0");
-        AndroidSimpleList.add("Oreo - 8.0-8.1");
-        AndroidSimpleList.add("Nougat - 7.0-7.1.2");
-        AndroidSimpleList.add("Marshmallow - 6.0-6.0.1");
-        AndroidSimpleList.add("Lollipop - 5.0-5.1.1");
-        AndroidSimpleList.add("KitKat - 4.4-4.4.4");
-        AndroidSimpleList.add("Jelly Bean - 4.1-4.3.1");
+
+        AndroidVersion item1 = new AndroidVersion("Pie","9.0");
+        AndroidVersion item2 = new AndroidVersion("Oreo","8.0-8.1");
+        AndroidVersion item3 = new AndroidVersion("Nougat","7.0-7.1.2");
+        AndroidVersion item4 = new AndroidVersion("Marshmallow","6.0-6.0.1");
+        AndroidVersion item5 = new AndroidVersion("Lollipop","5.0-5.1.1");
+        AndroidVersion item6 = new AndroidVersion("KitKat","4.4-4.4.4");
+        AndroidVersion item7 = new AndroidVersion("Jelly Bean","4.1-4.3.1");
+
+        AndroidSimpleList.add(item1);
+        AndroidSimpleList.add(item2);
+        AndroidSimpleList.add(item3);
+        AndroidSimpleList.add(item4);
+        AndroidSimpleList.add(item5);
+        AndroidSimpleList.add(item6);
+        AndroidSimpleList.add(item7);
 
         aaAndroid = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, AndroidSimpleList);
         AndroidList.setAdapter(aaAndroid);
