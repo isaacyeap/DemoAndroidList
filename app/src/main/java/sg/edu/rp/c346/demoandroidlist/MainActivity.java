@@ -12,7 +12,8 @@ public class MainActivity extends AppCompatActivity {
 
     ListView AndroidList;
     ArrayList<AndroidVersion> AndroidSimpleList;
-    ArrayAdapter<AndroidVersion> aaAndroid;
+    //ArrayAdapter<AndroidVersion> aaAndroid;
+    CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +38,9 @@ public class MainActivity extends AppCompatActivity {
         AndroidSimpleList.add(item6);
         AndroidSimpleList.add(item7);
 
-        aaAndroid = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, AndroidSimpleList);
-        AndroidList.setAdapter(aaAndroid);
+        adapter = new CustomAdapter(this, R.layout.row, AndroidSimpleList);
+        AndroidList.setAdapter(adapter);
+        //aaAndroid = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, AndroidSimpleList);
+        //AndroidList.setAdapter(aaAndroid);
     }
 }
